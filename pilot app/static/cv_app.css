@@ -1,0 +1,64 @@
+
+#CV-size{
+  height: 842px;
+  width: auto;
+  background: green;
+}
+
+#work-experience_section{
+  width: auto;
+  background: yellow;
+  margin: 0px;
+}
+
+#name_section{
+  height: auto;
+  width: auto;
+  background: pink;
+  margin-top: 0px;
+  /* font-size: 10px;
+  align-items: center; */
+}
+
+#Education_section{
+  height: auto;
+  width: auto;
+  background: cyan;
+  margin: 0px;
+}
+
+body, html {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+p, li, ul {
+  margin-bottom: 0px;
+  font-size: 11px;
+}
+
+#Education_section p{
+  padding: 0px;
+}
+
+
+.text-size{
+  font-size: 20px;
+}
+
+
+#Skills-Interests{
+  margin: 0px;
+  background: pink;
+
+}
+/*
+.mb-2{
+  margin-bottom: 2px;
+} */
+/*
+.d-flex{
+  display: flex;
+  /* background: #ccc; */
+/*  flex-flow: row wrap;
+  justify-content: center;
+ } */

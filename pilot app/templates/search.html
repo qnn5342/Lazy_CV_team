@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>List of partners for you</title>
+  </head>
+  <body>
+    <h1>Your dating pool is below </h1>
+    {%for service in all_services%}
+    {%if service.gender == 1 %}
+    <img src="../static/images/male-profile.jpg">
+    {%else%}
+    <img src="../static/images/female-profile.jpg">
+    {%endif%}
+    <p>{{service.name}}</p>
+    <p>{{service.yob}}</p>
+    <p>{{service.gender}}</p>
+    <p>{{service.height}}</p>
+    <p>{{service.address}}</p>
+
+    {%endfor %}
+  </body>
+</html>
