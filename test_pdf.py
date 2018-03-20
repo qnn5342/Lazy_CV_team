@@ -6,9 +6,9 @@ try:
 
     # run the conversion and write the result to a file
     client.convertUrlToFile('https://lazy-cv-test.herokuapp.com/', 'test.pdf')
-except pdfcrowd.Error as why:
+#except pdfcrowd.Error as why:
     # report the error to the standard error stream
-    sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
+ #   sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
 
 #
 #
