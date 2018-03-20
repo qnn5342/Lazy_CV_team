@@ -1,10 +1,10 @@
 import mongoengine
 
-#mongodb://<dbuser>:<dbpassword>@ds011902.mlab.com:11902/quang_sbearfindingapp
+#mongodb://<dbuser>:<dbpassword>@ds117749.mlab.com:17749/lazy_cv_test
 
-host = "ds011902.mlab.com"
-port = 11902
-db_name = "quang_sbearfindingapp"
+host = "ds117749.mlab.com"
+port = 17749
+db_name = "lazy_cv_test"
 user_name = "admin"
 password = "admin"
 

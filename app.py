@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
 
-from Module.service import Service
+from Module.CV_template1 import Template1
 
 import mlab
 

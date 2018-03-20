@@ -1,88 +1,323 @@
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Name</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Hieu Nguyen">
-  </div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CV-form-edit</title>
+      {% include "metadata.html" %}
+      <link rel="stylesheet" href="static/cv_form.css">
+  </head>
+  <body>
 
-  <form>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+  <header  id="Save-button" class="mb-1">
+      <div class="">
+          <button type="submit" class="btn btn-primary">Save section data</button>
       </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputAddress">Address</label>
-      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-    <div class="form-group">
-      <label for="inputAddress2">Address 2</label>
-      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="inputState">State</label>
-        <select id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputZip">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
-  </form>
+  </header>
+  <section class="d-flex justify-content-between">
+      <section id="Div-size-1" class="mb-4"style="overflow:auto;">
+        <div id="name_section">
+                  <h3>Name Section</h3>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Your name in Full</label>
+                    <input class="form-control" id="exampleFormControlInput1" placeholder="Hieu Nguyen">
+                  </div>
+
+                  <form>
+
+                    <div class="form-group">
+                      <label for="inputAddress">Street Address</label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="Lane 5 Tran Duy Hung">
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" class="form-control" id="inputCity" placeholder="Hanoi">
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="inputState">Country</label>
+                        <select id="inputState" class="form-control">
+                          <option selected>Choose...</option>
+                          <option>Vietnam</option>
+                          <option>US</option>
+                          <option>UK</option>
+                          <option>Go away!</option>
+                        </select>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputPhonenumber">Phone Number</label>
+                          <input type="Phonenumber" class="form-control" id="inputPhonenumbẻ" placeholder="09123456789">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="inputEmail4">Email</label>
+                          <input type="email" class="form-control" id="inputEmail4" placeholder="zaidep@gmail.com">
+                        </div>
+                      </div>
+
+                  </form>
+        </div>
+        <div id="Education_section" class="form-group mt-3">
+            <h3>Education section</h3>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Input your university</label>
+                  <input type="email" class="form-control" id="inputUni" placeholder="Harvard University">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPhonenumber">University location</label>
+                  <input type="Phonenumber" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPhonenumber">Your major</label>
+                  <input type="Phonenumber" class="form-control" id="input major" placeholder="Ex:Bachelor of Arts in Mathematics and Economics and Business">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPhonenumber">Graduation date</label>
+                  <input type="Phonenumber" class="form-control" id="input time" placeholder="Ex: Expected May 2020">
+                </div>
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">GPA</label>
+                    <input type="GPA" class="form-control" id="inputGPA" placeholder="3.9/4.0">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputSAT">SAT (leave blank if not available)</label>
+                    <input type="SAT" class="form-control" id="input SAT" placeholder="leave blank if not available">
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Honors</label>
+                <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Relevant Coursework</label>
+                <textarea class="form-control" id="input Coursework"  placeholder="leave blank if not available"></textarea>
+              </div>
+          </div>
+        <div id="work-experience_section" class="form-group mt-3">
+              <h3>Work Experience Section</h3>
+              <div id="job-1">
+                    <h4> Job 1 section</h4>
+                    <div  class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="input Company 1">Company 1</label>
+                    <input type="Company 1" class="form-control" id="input Com 1" placeholder="XYZ Company 1">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="input Company 1 location">Company 1 location</label>
+                    <input type="company 1 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="input Position">Your position</label>
+                    <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPhonenumber">Time of employment</label>
+                    <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                  </div>
+                </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Bullet 1</label>
+                    <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Bullet 2</label>
+                    <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Bullet 3</label>
+                    <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Bullet 4</label>
+                    <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Bullet 5</label>
+                    <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                  </div>
+                </div>
+
+              </div>
+
+              <div id="job-2">
+                            <h4> Job 2 section</h4>
+                            <div  class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="input Company 1">Company 2</label>
+                            <input type="Company 2" class="form-control" id="input Com 2" placeholder="XYZ Company 2">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="input Company 2 location">Company 2 location</label>
+                            <input type="company 2 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="input Position">Your position</label>
+                            <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputPhonenumber">Time of employment</label>
+                            <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                          </div>
+                        </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Bullet 1</label>
+                            <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Bullet 2</label>
+                            <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Bullet 3</label>
+                            <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Bullet 4</label>
+                            <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Bullet 5</label>
+                            <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                          </div>
+                        </div>
+
+                </div>
+
+              <div id="job-3">
+                      <h4> Job 3 section</h4>
+                      <div  class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="input Company 1">Company 3</label>
+                      <input type="Company 3" class="form-control" id="input Com 3" placeholder="XYZ Company 3">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="input Company 1 location">Company 3 location</label>
+                      <input type="company 1 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="input Position">Your position</label>
+                      <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPhonenumber">Time of employment</label>
+                      <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                    </div>
+                  </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Bullet 1</label>
+                      <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Bullet 2</label>
+                      <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Bullet 3</label>
+                      <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Bullet 4</label>
+                      <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Bullet 5</label>
+                      <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                    </div>
+                  </div>
+
+                </div>
+
+
+              <div id="job-4">
+                        <h4> Job 4 section</h4>
+                        <div  class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="input Company 4">Company 4</label>
+                        <input type="Company 4" class="form-control" id="input Com 4" placeholder="XYZ Company 4">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="input Company 4 location">Company 4 location</label>
+                        <input type="company 4 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="input Position">Your position</label>
+                        <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="inputPhonenumber">Time of employment</label>
+                        <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                      </div>
+                    </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Bullet 1</label>
+                        <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Bullet 2</label>
+                        <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Bullet 3</label>
+                        <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Bullet 4</label>
+                        <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Bullet 5</label>
+                        <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                      </div>
+                    </div>
+
+                  </div>
+
+        </div>
+        <div id="Activities and Interests" class="form-group mt-3">
+            <h3>Activities and Interests</h3>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Languages</label>
+            <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Technical Skills</label>
+            <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+          </div><div class="form-group">
+            <label for="exampleFormControlTextarea1">Training</label>
+            <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Relevant Coursework</label>
+            <textarea class="form-control" id="input Coursework"  placeholder="leave blank if not available"></textarea>
+          </div>
+        </div>
+      </section>
+
+
+      <section  id="section2" class="">
+          <img src="../static/images/CV_template1.jpg" alt="">
+
+      </section>
+
+</section>
 
 
 
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

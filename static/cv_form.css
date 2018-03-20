@@ -1,0 +1,25 @@
+#Div-size-1{
+  width: 60%;
+  height: 100vh;
+  background: pink;
+  /* background-image: url("../static/images/Wallpapers-For-Galaxy-S4-Space-2.jpg");
+  background-attachment: fixed; */
+
+}
+/*
+div{
+  color: white;
+} */
+
+#section2{
+  background-attachment: fixed;
+}
+
+#Save-button{
+
+  width: 100%;
+  height: auto;
+  /* position: fixed; */
+  /* top: 0px;
+  right: 43%; */
+}
