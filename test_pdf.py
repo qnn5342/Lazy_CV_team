@@ -1,5 +1,4 @@
 import pdfcrowd
-import sys
 
 try:
     # create the API client instance
