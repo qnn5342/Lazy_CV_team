@@ -14,14 +14,14 @@ app = Flask(__name__)
 # service = Service(name='Hera Kieu Anh', yob= 1998, gender=0, height= 160, phone ='091234567', address='Hanoi', status=True)
 #
 # service.save()
-
-
+#
+#
 @app.route('/')
 def index():
     return render_template('CV_detail_page3/CV_student.html')
 
 @app.route('/index')
-def index():
+def index1():
     return render_template('index.html',)
 
 
