@@ -20,6 +20,11 @@ app = Flask(__name__)
 def index():
     return render_template('CV_detail_page3/CV_student.html')
 
+@app.route('/index')
+def index():
+    return render_template('index.html',)
+
+
 @app.route('/form')
 def form():
     return render_template('CV_detail_page3/CV_form_edit.html')
@@ -29,6 +34,17 @@ def search(gender):
     services= Service.objects(gender=gender, yob__lte = '1998', height__gte = "160", address__contains = "Hanoi")
     return render_template('search.html', all_services= services)
 
+@app.route('/student')
+def student():
+    return render_template('service-student.html')
+
+@app.route('/worker')
+def worker():
+    return render_template('service-worker.html')
+
+@app.route('/template')
+def template():
+    return "form"
 
 @app.route('/admin')
 def admin():

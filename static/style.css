@@ -1,0 +1,100 @@
+.bg-frontpage {
+  background: url('../static/image/frontpage.jpg');
+  height: 100vh;
+  background-size: cover;
+}
+
+.bg-service {
+  background: url('../static/image/service.jpg');
+  height: 100vh;
+  background-size: cover;
+}
+
+.font-robotto {
+  font-family: 'Roboto', sans-serif;
+}
+
+a.nav-link:hover{
+  color: white !important;
+  cursor: pointer;
+}
+
+.font-size-30px {
+  font-size: 30px;
+}
+
+.font-size-20px {
+  font-size: 20px;
+}
+
+.font-size-50px {
+  font-size: 50px;
+}
+
+.font-open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-poppins {
+  font-family: "Poppins";
+}
+
+.font-size-40px {
+  font-size: 40px;
+}
+
+
+.mr-100 {
+  margin-right: 100px;
+}
+
+.mr-90 {
+  margin-right: 90px;
+}
+
+.mr-120 {
+  margin-right: 120px;
+}
+
+.mr-95 {
+  margin-right: 95px;
+}
+
+
+
+
+#navigation {
+  height: 500px;
+  /* line-height: 80px; */
+}
+
+}
+.border {
+  border: 1px solid gray;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+.float-left {
+  float: left;
+}
+.h-100 {
+  height: 100%;
+  width: 25%;
+}
+
+ul {
+  list-style: none;
+}
+.text-upper {
+  text-transform: uppercase;
+  text-align: center;
+  color: red;
+}
+/* .image {
+  background-image: ulr(https://res.cloudinary.com/teepublic/image/private/s--PtCSCK3S--/t_Preview/b_rgb:ffffff,c_lpad,f_jpg,h_630,q_90,w_1200/v1503889515/production/designs/1855155_1.jpg);
+} */

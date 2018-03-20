@@ -2,13 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>quang_sbearfindingapp</title>
+    <title> Do you want to have a CV? </title>
+    {% include "meta-data.html" %}
   </head>
   <body>
-    <h1>quang_sbearfindingapp</h1>
-    <!-- search:function name  -->
-    <a href="{{ url_for('search',gender = 0)}}">Bạn là nam?</a>
-    <a href="{{ url_for('search',gender = 1)}}">Bạn là nữ?</a>
-
+    {% include "homepage/content.html" %}
   </body>
 </html>

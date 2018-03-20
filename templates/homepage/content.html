@@ -1,0 +1,18 @@
+<div class="bg-frontpage">
+<!-- Header -->
+  <nav class="nav">
+      <a class="nav-link active text-dark font-size-20px"> <i class="fas fa-address-book"></i> </a>
+      <a class="nav-link active text-dark font-size-20px text-uppercase font-open-sans" href="{{ url_for('index') }}"> Home </a>
+      <a class="nav-link active text-dark font-size-20px text-uppercase font-open-sans" href="http://kenh14.vn/"> About </a>
+  </nav>
+
+  <div class="d-flex align-items-end flex-column text-light mr-100 mt-5" style="height: 300px;">
+    <div class="text-uppercase font-size-40px font-weight-bold"> Hello! Welcome to LazyCV </div>
+    <div class="font-size-30px p-2 font-weight-light mr-90"> Create your CV in 5 minutes. </div>
+    <div class="mt-auto font-size-50px font-italic mr-120 font-montserrat"> Who are you? </div>
+    </div>
+
+  <div class="d-flex flex-row-reverse mr-100 mt-5">
+    <a class="border p-3 font-size-30px text-light font-weight-light rounded mr-100" href="{{ url_for('student') }}"> Student </a>
+    <a class="border p-3 font-size-30px text-light font-weight-light rounded mr-95" href="{{ url_for('worker') }}"> Worker </a>
+  </div>
