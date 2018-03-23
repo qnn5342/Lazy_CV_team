@@ -1,11 +1,11 @@
 .bg-frontpage {
-  background: url('../static/image/frontpage.jpg');
+  background: url('../static/images/frontpage.jpg');
   height: 100vh;
   background-size: cover;
 }
 
 .bg-service {
-  background: url('../static/image/service.jpg');
+  background: url('../static/images/service.jpg');
   height: 100vh;
   background-size: cover;
 }

@@ -27,7 +27,8 @@ def index1():
 
 @app.route('/form')
 def form():
-    return render_template('CV_detail_page3/CV_form_edit.html')
+    template1 = Template1.objects
+    return render_template('CV_detail_page3/CV_form_edit.html', all_templates=template1)
 
 @app.route('/search/<gender>')
 def search(gender):

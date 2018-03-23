@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="static/cv_form.css">
   </head>
   <body>
-
+        {% for item in template1%}
   <header  id="Save-button" class="mb-1">
       <div class="">
           <button type="submit" class="btn btn-primary">Save section data</button>
@@ -16,7 +16,8 @@
   <section class="d-flex justify-content-between">
       <section id="Div-size-1" class="mb-4"style="overflow:auto;">
         <div id="name_section">
-                  <h3>Name Section</h3>
+                  <h3>{{item.name}}</h3>
+                  {% endfor %}
                 <form>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Your name in Full</label>
@@ -303,7 +304,6 @@
       </section>
 
 </section>
-
 
 
 
