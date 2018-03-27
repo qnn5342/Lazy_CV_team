@@ -25,6 +25,7 @@ def index():
 def index1():
     return render_template('index.html',)
 
+@app.route('/')
 #
 # @app.route('/form')
 # def form():
@@ -41,7 +42,7 @@ def form(template1_id):
     # print(template2)
     if request.method == 'GET':
         print(template1)
-        return render_template('CV_detail_page3/CV_form_edit.html', all_templates=[template1])
+        return render_template('CV_detail_page3/CV_form_edit.html', all_templates=[template1], id_to_find=id_to_find)
     elif request.method == 'POST':
         print (template1)
         if template1 is not None:
