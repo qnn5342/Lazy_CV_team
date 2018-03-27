@@ -1,20 +1,20 @@
 
 #CV-size{
   height: 842px;
-  width: auto;
-  background: green;
+  width: 595px;
+  /* background: green; */
 }
 
 #work-experience_section{
   width: auto;
-  background: yellow;
+  /* background: yellow; */
   margin: 0px;
 }
 
 #name_section{
   height: auto;
   width: auto;
-  background: pink;
+  /* background: pink; */
   margin-top: 0px;
   /* font-size: 10px;
   align-items: center; */
@@ -23,7 +23,7 @@
 #Education_section{
   height: auto;
   width: auto;
-  background: cyan;
+  /* background: cyan; */
   margin: 0px;
 }
 
@@ -48,7 +48,7 @@ p, li, ul {
 
 #Skills-Interests{
   margin: 0px;
-  background: pink;
+  /* background: pink; */
 
 }
 /*

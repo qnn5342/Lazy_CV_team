@@ -45,7 +45,7 @@ def form(template1_id):
     elif request.method == 'POST':
         # print (template1)
         if template1 is not None:
-            # list1 = ['name', 'street_address', 'Phonenumber', 'Email', 'city', 'country', 'university', 'uni_location', 'major', 'graduation_date', 'GPA', 'SAT', 'Honors', 'Relevant_Coursework', 'Company1', 'Company1_location', 'Company1_Position', 'Company1_duration', 'Company1_Bullet1', 'Company1_Bullet2', 'Company1_Bullet3', 'Company1_Bullet4', 'Company2', 'Company2_location', 'Company2_Position', 'Company2_duration', 'Company2_Bullet1', 'Company2_Bullet2', 'Company2_Bullet3', 'Company2_Bullet4', 'Company3', 'Company3_location', 'Company3_Position', 'Company3_duration', 'Company3_Bullet1', 'Company3_Bullet2', 'Company3_Bullet3', 'Company3_Bullet4', 'Languages', 'Technical_skills', 'Training', 'Activities', 'Interests']
+
             form = request.form
             if form['name'] != "":
                 name = form['name']
@@ -57,51 +57,113 @@ def form(template1_id):
             else:
                 street_address = template1['street_address']
             #
-            # if str(form['Phonenumber']) != "":
-            #     Phonenumber = form['Phonenumber']
-            # else:
-            #     Phonenumber = template1['Phonenumber']
-            #
-            # if form['Email] != "":
-            #     Email = form['Email']
-            # else:
-            #     Email = template1['Email']
-            #
-            # if form['city'] != "":
-            #     city = form['city']
-            # else:
-            #     city = template1['city']
-            #
-            # if form['country'] != "":
-            #     country = form['country']
-            # else:
-            #     country = template1['country']
+            if str(form['Phonenumber']) != "":
+                Phonenumber = form['Phonenumber']
+            else:
+                Phonenumber = template1['Phonenumber']
 
-            # country = form['country']
-            # Phonenumber = form['Phonenumber']
-            # Email = form['Email']
-            # university = form ['university']
-            # uni_location = form ['uni_location']
-            # SAT = form['SAT']
-            # print(name)
-            # print(template1['name'])
-            # print(street_address)
-            # print(city)
-            # print(country)
-            # print(SAT)
-            # list1 = [name, street_address]
-            # list2 = []
-            # for item in list1:
-            #     if item != '':
-            #         list2.append(item)
-            # print(list2)
-            print (name)
+            Email = template1['Email'] if form['Email'] == '' else form['Email']
+            city = template1['city'] if form['city'] == '' else form['city']
+            country = template1['country'] if form['country'] == '' else form['country']
+            university = template1['university'] if form['university'] == '' else form['university']
+            uni_location = template1['uni_location'] if form['uni_location'] == '' else form['uni_location']
+            major = template1['major'] if form['major'] == '' else form['major']
+            graduation_date = template1['graduation_date'] if form['graduation_date'] == '' else form['graduation_date']
+            GPA = template1['GPA'] if form['GPA'] == '' else form['GPA']
+            SAT = template1['SAT'] if form['SAT'] == '' else form['SAT']
+            Honors = template1['Honors'] if form['Honors'] == '' else form['Honors']
+            Relevant_Coursework = template1['Relevant_Coursework'] if form['Relevant_Coursework'] == '' else form['Relevant_Coursework']
+            Company1 = template1['Company1'] if form['Company1'] == '' else form['Company1']
+            Company1_location = template1['Company1_location'] if form['Company1_location'] == '' else form['Company1_location']
+            Company1_Position = template1['Company1_Position'] if form['Company1_Position'] == '' else form['Company1_Position']
+            Company1_duration = template1['Company1_duration'] if form['Company1_duration'] == '' else form['Company1_duration']
+            Company1_Bullet1 = template1['Company1_Bullet1'] if form['Company1_Bullet1'] == '' else form['Company1_Bullet1']
+            Company1_Bullet2 = template1['Company1_Bullet2'] if form['Company1_Bullet2'] == '' else form['Company1_Bullet2']
+            Company1_Bullet3 = template1['Company1_Bullet3'] if form['Company1_Bullet3'] == '' else form['Company1_Bullet3']
+            Company1_Bullet4 = template1['Company1_Bullet4'] if form['Company1_Bullet4'] == '' else form['Company1_Bullet4']
+            Company2 = template1['Company2'] if form['Company2'] == '' else form['Company2']
+            Company2_location = template1['Company2_location'] if form['Company2_location'] == '' else form['Company2_location']
+            Company2_Position = template1['Company2_Position'] if form['Company2_Position'] == '' else form['Company2_Position']
+            Company2_duration = template1['Company2_duration'] if form['Company2_duration'] == '' else form['Company2_duration']
+            Company2_Bullet1 = template1['Company2_Bullet1'] if form['Company2_Bullet1'] == '' else form['Company2_Bullet1']
+            Company2_Bullet2 = template1['Company2_Bullet2'] if form['Company2_Bullet2'] == '' else form['Company2_Bullet2']
+            Company2_Bullet3 = template1['Company2_Bullet3'] if form['Company2_Bullet3'] == '' else form['Company2_Bullet3']
+            Company2_Bullet4 = template1['Company2_Bullet4'] if form['Company2_Bullet4'] == '' else form['Company2_Bullet4']
+            Company3 = template1['Company3'] if form['Company3'] == '' else form['Company3']
+            Company3_location = template1['Company3_location'] if form['Company3_location'] == '' else form['Company3_location']
+            Company3_Position = template1['Company3_Position'] if form['Company3_Position'] == '' else form['Company3_Position']
+            Company3_duration = template1['Company3_duration'] if form['Company3_duration'] == '' else form['Company3_duration']
+            Company3_Bullet1 = template1['Company3_Bullet1'] if form['Company3_Bullet1'] == '' else form['Company3_Bullet1']
+            Company3_Bullet2 = template1['Company3_Bullet2'] if form['Company3_Bullet2'] == '' else form['Company3_Bullet2']
+            Company3_Bullet3 = template1['Company3_Bullet3'] if form['Company3_Bullet3'] == '' else form['Company3_Bullet3']
+            Company3_Bullet4 = template1['Company3_Bullet4'] if form['Company3_Bullet4'] == '' else form['Company3_Bullet4']
+            # Company4 = template1['Company4'] if form['Company4'] == '' else form['Company4']
+            # Company4_location = template1['Company4_location'] if form['Company4_location'] == '' else form['Company4_location']
+            # Company4_Position = template1['Company4_Position'] if form['Company4_Position'] == '' else form['Company4_Position']
+            # Company4_duration = template1['Company4_duration'] if form['Company4_duration'] == '' else form['Company4_duration']
+            # Company4_Bullet1 = template1['Company4_Bullet1'] if form['Company4_Bullet1'] == '' else form['Company4_Bullet1']
+            # Company4_Bullet2 = template1['Company4_Bullet2'] if form['Company4_Bullet2'] == '' else form['Company4_Bullet2']
+            # Company4_Bullet3 = template1['Company4_Bullet3'] if form['Company4_Bullet3'] == '' else form['Company4_Bullet3']
+            # Company4_Bullet4 = template1['Company4_Bullet4'] if form['Company4_Bullet4'] == '' else form['Company3_Bullet4']
+            Languages = template1['Languages'] if form['Languages'] == '' else form['Languages']
+            Technical_skills = template1['Technical_skills'] if form['Technical_skills'] == '' else form['Technical_skills']
+            Training = template1['Training'] if form['Training'] == '' else form['Training']
+            Activities = template1['Activities'] if form['Activities'] == '' else form['Activities']
+            Interests = template1['Interests'] if form['Interests'] == '' else form['Interests']
+
+            # print (university)
             template1.update(set__name= name,
-            set__street_address= street_address)
-            # set__Phonenumber= Phonenumber)
-            # set__Email= Email,)
-             # set__city= city, set__country= country)
-              # set__SAT = SAT)
+            set__street_address= street_address,
+            set__Phonenumber= Phonenumber,
+            set__Email= Email,
+            set__city= city,
+            set__country= country,
+            set__university= university,
+            set__uni_location= uni_location,
+            set__major= major,
+            set__graduation_date= graduation_date,
+            set__GPA= GPA,
+            set__SAT= SAT,
+            set__Honors= Honors,
+            set__Relevant_Coursework= Relevant_Coursework,
+            set__Company1= Company1,
+            set__Company1_location= Company1_location,
+            set__Company1_Position= Company1_Position,
+            set__Company1_duration= Company1_duration,
+            set__Company1_Bullet1= Company1_Bullet1,
+            set__Company1_Bullet2= Company1_Bullet2,
+            set__Company1_Bullet3= Company1_Bullet3,
+            set__Company1_Bullet4= Company1_Bullet4,
+            set__Company2= Company2,
+            set__Company2_location= Company2_location,
+            set__Company2_Position= Company2_Position,
+            set__Company2_duration= Company2_duration,
+            set__Company2_Bullet1= Company2_Bullet1,
+            set__Company2_Bullet2= Company2_Bullet2,
+            set__Company2_Bullet3= Company2_Bullet3,
+            set__Company2_Bullet4= Company2_Bullet4,
+            set__Company3= Company3,
+            set__Company3_location= Company3_location,
+            set__Company3_Position= Company3_Position,
+            set__Company3_duration= Company3_duration,
+            set__Company3_Bullet1= Company3_Bullet1,
+            set__Company3_Bullet2= Company3_Bullet2,
+            set__Company3_Bullet3= Company3_Bullet3,
+            set__Company3_Bullet4= Company3_Bullet4,
+            # set__Company4_location= Company4_location,
+            # set__Company4_Position= Company4_Position,
+            # set__Company4_duration= Company4_duration,
+            # set__Company4_Bullet1= Company4_Bullet1,
+            # set__Company4_Bullet2= Company4_Bullet2,
+            # set__Company4_Bullet3= Company4_Bullet3,
+            # set__Company4_Bullet4= Company4_Bullet4,
+            set__Languages= Languages,
+            set__Technical_skills= Technical_skills,
+            set__Training= Training,
+            set__Activities= Activities,
+            set__Interests= Interests,
+            )
+
             template1.reload()
             print(template1.to_mongo())
             # return "Updated!!"
