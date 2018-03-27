@@ -6,6 +6,8 @@ class Template1(Document):
 
     name = StringField()
     street_address = StringField()
+    Phonenumber = IntField()
+    Email= StringField()
     city = StringField()
     country = StringField()
     university = StringField()
@@ -45,4 +47,3 @@ class Template1(Document):
     Training = StringField()
     Activities = StringField()
     Interests = StringField()
-    

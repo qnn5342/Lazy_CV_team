@@ -4,97 +4,95 @@
     <meta charset="utf-8">
     <title>CV-form-edit</title>
       {% include "metadata.html" %}
-      <link rel="stylesheet" href="static/cv_form.css">
+      <link rel="stylesheet" href="../static/cv_form.css">
   </head>
   <body>
-        {% for item in template1%}
-  <header  id="Save-button" class="mb-1">
-      <div class="">
-          <button type="submit" class="btn btn-primary">Save section data</button>
-      </div>
-  </header>
-  <section class="d-flex justify-content-between">
-      <section id="Div-size-1" class="mb-4"style="overflow:auto;">
-        <div id="name_section">
-                  <h3>{{item.name}}</h3>
-                  {% endfor %}
-                <form>
-                  <div class="form-group">
-                    <label for="exampleFormControlInput1">Your name in Full</label>
-                    <input class="form-control" id="exampleFormControlInput1" placeholder="Hieu Nguyen">
-                  </div>
+        {% for template1 in all_templates %}
+    <header  id="Save-button" class="mb-1">
+      <form method= 'post'>
+              <div class="">
+                  <button type="submit" class="btn btn-primary">Save section data</button>
+              </div>
+          </header>
+          <section class="d-flex justify-content-between">
+              <section id="Div-size-1" class="mb-4" style="overflow:auto;">
+                <div id="name_section">
+                          <h3>Name Section</h3>
+                          <div class="form-group">
+                            <label for="exampleFormControlInput1">Input your full name</label>
+                            <input class="form-control" name="name" id="exampleFormControlInput1" placeholder="{{template1.name}}">
+                          </div>
 
-                  <form>
 
-                    <div class="form-group">
-                      <label for="inputAddress">Street Address</label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="Lane 5 Tran Duy Hung">
-                    </div>
-                    <div class="form-row">
-                      <div class="form-group col-md-6">
-                        <label for="inputCity">City</label>
-                        <input type="text" class="form-control" id="inputCity" placeholder="Hanoi">
-                      </div>
-                      <div class="form-group col-md-4">
-                        <label for="inputState">Country</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>Vietnam</option>
-                          <option>US</option>
-                          <option>UK</option>
-                          <option>Go away!</option>
-                        </select>
-                      </div>
-                      <div class="form-row">
-                        <div class="form-group col-md-6">
-                          <label for="inputPhonenumber">Phone Number</label>
-                          <input type="Phonenumber" class="form-control" id="inputPhonenumbẻ" placeholder="09123456789">
-                        </div>
-                        <div class="form-group col-md-6">
-                          <label for="inputEmail4">Email</label>
-                          <input type="email" class="form-control" id="inputEmail4" placeholder="zaidep@gmail.com">
-                        </div>
-                      </div>
+                            <div class="form-group">
+                              <label for="inputAddress">Street Address</label>
+                              <input type="text" class="form-control" name="street_address" id="inputAddress" placeholder="{{template1.street_address}}">
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" name = "city" id="inputCity" placeholder="{{template1.city}}">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label for="inputState">Country</label>
+                                <select id="inputState" class="form-control" name="country">
+                                  <option selected>Choose...</option>
+                                  <option value="Vietnam">Vietnam</option>
+                                  <option value="US">US</option>
+                                  <option value="UK">UK</option>
+                                  <option value="China">Go away!</option>
+                                </select>
+                              </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-6">
+                                  <label for="inputPhonenumber">Phone Number</label>
+                                  <input type="Phonenumber" class="form-control" name="Phonenumber" id="inputPhonenumbẻ" placeholder="{{template1.Phonenumber}}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="inputEmail4">Email</label>
+                                  <input type="email" class="form-control" name="Email" id="inputEmail4" placeholder="{{template1.Email}}">
+                                </div>
+                              </div>
 
-                  </form>
+      </form>
         </div>
         <div id="Education_section" class="form-group mt-3">
             <h3>Education section</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">Input your university</label>
-                  <input type="email" class="form-control" id="inputUni" placeholder="Harvard University">
+                  <input type="email" class="form-control" name="university" id="inputUni" placeholder="{{template1.university}}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPhonenumber">University location</label>
-                  <input type="Phonenumber" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                  <input type="Phonenumber" class="form-control" name="uni_location" id="input location" placeholder="{{template1.uni_location}}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPhonenumber">Your major</label>
-                  <input type="Phonenumber" class="form-control" id="input major" placeholder="Ex:Bachelor of Arts in Mathematics and Economics and Business">
+                  <input type="Phonenumber" class="form-control" name="major" id="input major" placeholder="{{template1.major}}">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPhonenumber">Graduation date</label>
-                  <input type="Phonenumber" class="form-control" id="input time" placeholder="Ex: Expected May 2020">
+                  <input type="Phonenumber" class="form-control" name="graduation_date" id="input time" placeholder="{{template1.graduation_date}}">
                 </div>
               </div>
               <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">GPA</label>
-                    <input type="GPA" class="form-control" id="inputGPA" placeholder="3.9/4.0">
+                    <input type="GPA" class="form-control" name="GPA" id="inputGPA" placeholder="{{template1.GPA}}">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputSAT">SAT (leave blank if not available)</label>
-                    <input type="SAT" class="form-control" id="input SAT" placeholder="leave blank if not available">
+                    <input type="SAT" class="form-control" name="SAT" id="input SAT" placeholder="{{template1.SAT}}">
                   </div>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Honors</label>
-                <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+                <textarea class="form-control" id="input Honor" name="Honors" placeholder="{{template1.Honors}}"></textarea>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Relevant Coursework</label>
-                <textarea class="form-control" id="input Coursework"  placeholder="leave blank if not available"></textarea>
+                <textarea class="form-control" id="input Coursework" name="Relevant_Coursework" placeholder="{{template1.Relevant_Coursework}}"></textarea>
               </div>
           </div>
         <div id="work-experience_section" class="form-group mt-3">
@@ -104,40 +102,40 @@
                     <div  class="form-row">
                   <div class="form-group col-md-6">
                     <label for="input Company 1">Company 1</label>
-                    <input type="Company 1" class="form-control" id="input Com 1" placeholder="XYZ Company 1">
+                    <input type="Company 1" class="form-control" id="input Com 1" name="Company1" placeholder="{{template1.Company1}}">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="input Company 1 location">Company 1 location</label>
-                    <input type="company 1 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                    <input type="company 1 location" class="form-control" id="input location" name="Company1_location"placeholder="template1.Company1_location">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="input Position">Your position</label>
-                    <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                    <input type="Phonenumber" class="form-control" id="input position" name="Company1_position" placeholder="template1.Company1_Position ">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPhonenumber">Time of employment</label>
-                    <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                    <input type="Phonenumber" class="form-control" name="Company1_duration" id="input employment" placeholder="{{template1.Company1_duration}}">
                   </div>
                 </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Bullet 1</label>
-                    <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                    <textarea class="form-control" id="input Bullet 1" name="Company1_Bullet1" placeholder="{{template1.Company1_Bullet1}}"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Bullet 2</label>
-                    <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                    <textarea class="form-control" id="input Bullet 2" name="Company1_Bullet2" placeholder="{{template1.Company1_Bullet2}}"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Bullet 3</label>
-                    <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                    <textarea class="form-control" id="input Bullet 3" name="Company1_Bullet3" placeholder="{{template1.Company1_Bullet3}}"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Bullet 4</label>
-                    <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                    <textarea class="form-control" id="input Bullet 4" name="Company1_Bullet4" placeholder="{{template1.Company1_Bullet4}}"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Bullet 5</label>
-                    <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                    <textarea class="form-control" id="input Bullet 5" name="Company1_Bullet5" placeholder="{{template1.Company1_Bullet5}}"></textarea>
                   </div>
                 </div>
 
@@ -148,40 +146,40 @@
                             <div  class="form-row">
                           <div class="form-group col-md-6">
                             <label for="input Company 1">Company 2</label>
-                            <input type="Company 2" class="form-control" id="input Com 2" placeholder="XYZ Company 2">
+                            <input type="Company 2" class="form-control" name="Company2" id="input Com 2" placeholder="{{template1.Company2}}">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="input Company 2 location">Company 2 location</label>
-                            <input type="company 2 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                            <input type="company 2 location" class="form-control" name="Company2_location" id="input location" placeholder="{{template1.Company2_location}}">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="input Position">Your position</label>
-                            <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                            <input type="Phonenumber" class="form-control" id="input position" name="Company2_position" placeholder="{{template1.Company2_Position}}">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="inputPhonenumber">Time of employment</label>
-                            <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                            <input type="Phonenumber" class="form-control" id="input employment" name="Company2_duration" placeholder="{{template1.Company2_Employment}}">
                           </div>
                         </div>
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Bullet 1</label>
-                            <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                            <textarea class="form-control" id="input Bullet 1" name="Company2_Bullet1" placeholder="{{template1.Company2_Bullet1}}"></textarea>
                           </div>
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Bullet 2</label>
-                            <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                            <textarea class="form-control" id="input Bullet 2"  name="Company2_Bullet2" placeholder="{{template1.Company2_Bullet2}}"></textarea>
                           </div>
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Bullet 3</label>
-                            <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                            <textarea class="form-control" id="input Bullet 3"  name="Company2_Bullet3" placeholder="{{template1.Company2_Bullet3}}"></textarea>
                           </div>
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Bullet 4</label>
-                            <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                            <textarea class="form-control" id="input Bullet 4"  name="Company2_Bullet4" placeholder="{{template1.Company2_Bullet4}}"></textarea>
                           </div>
                           <div class="form-group">
                             <label for="exampleFormControlTextarea1">Bullet 5</label>
-                            <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                            <textarea class="form-control" id="input Bullet 5" name="Company2_Bullet5" placeholder="{{template1.Company2_Bullet5}}"></textarea>
                           </div>
                         </div>
 
@@ -192,40 +190,40 @@
                       <div  class="form-row">
                     <div class="form-group col-md-6">
                       <label for="input Company 1">Company 3</label>
-                      <input type="Company 3" class="form-control" id="input Com 3" placeholder="XYZ Company 3">
+                      <input type="Company 3" class="form-control" id="input Com 3" name="Company3" placeholder="{{template1.Company3}}">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="input Company 1 location">Company 3 location</label>
-                      <input type="company 1 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                      <input type="company 1 location" class="form-control" id="input location" name="Company3_location" placeholder="{{template1.Company3_location}}">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="input Position">Your position</label>
-                      <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                      <input type="Phonenumber" class="form-control" id="input position" name="Company3_position" placeholder="{{template1.Company3_Position}}">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPhonenumber">Time of employment</label>
-                      <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                      <input type="Phonenumber" class="form-control" id="input employment" name="Company3_duration" placeholder="{{template1.Company3_duration}}">
                     </div>
                   </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Bullet 1</label>
-                      <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                      <textarea class="form-control" id="input Bullet 1"  name="Company3_Bullet1" placeholder="leave blank if not available"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Bullet 2</label>
-                      <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                      <textarea class="form-control" id="input Bullet 2" name="Company3_Bullet2" placeholder="leave blank if not available"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Bullet 3</label>
-                      <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                      <textarea class="form-control" id="input Bullet 3" name="Company3_Bullet3" placeholder="leave blank if not available"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Bullet 4</label>
-                      <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                      <textarea class="form-control" id="input Bullet 4" name="Company3_Bullet4" placeholder="leave blank if not available"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleFormControlTextarea1">Bullet 5</label>
-                      <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                      <textarea class="form-control" id="input Bullet 5" name="Company3_Bullet5" placeholder="leave blank if not available"></textarea>
                     </div>
                   </div>
 
@@ -237,40 +235,40 @@
                         <div  class="form-row">
                       <div class="form-group col-md-6">
                         <label for="input Company 4">Company 4</label>
-                        <input type="Company 4" class="form-control" id="input Com 4" placeholder="XYZ Company 4">
+                        <input type="Company 4" class="form-control" id="input Com 4" name="Company4" placeholder="XYZ Company 4">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="input Company 4 location">Company 4 location</label>
-                        <input type="company 4 location" class="form-control" id="input location" placeholder="Ex: Hanoi, Vietnam">
+                        <input type="company 4 location" class="form-control" id="input location" name="Company4_location" placeholder="Ex: Hanoi, Vietnam">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="input Position">Your position</label>
-                        <input type="Phonenumber" class="form-control" id="input position" placeholder="Ex: Employee of the Month ">
+                        <input type="Phonenumber" class="form-control" id="input position" name="Company4_position" placeholder="Ex: Employee of the Month ">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputPhonenumber">Time of employment</label>
-                        <input type="Phonenumber" class="form-control" id="input employment" placeholder="Ex: May 2010 - Present">
+                        <input type="Phonenumber" class="form-control" id="input employment" name="Company4_duration" placeholder="Ex: May 2010 - Present">
                       </div>
                     </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Bullet 1</label>
-                        <textarea class="form-control" id="input Bullet 1"  placeholder="leave blank if not available"></textarea>
+                        <textarea class="form-control" id="input Bullet 1" name="Company4_Bullet1" placeholder="leave blank if not available"></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Bullet 2</label>
-                        <textarea class="form-control" id="input Bullet 2"  placeholder="leave blank if not available"></textarea>
+                        <textarea class="form-control" id="input Bullet 2" name="Company4_Bullet2" placeholder="leave blank if not available"></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Bullet 3</label>
-                        <textarea class="form-control" id="input Bullet 3"  placeholder="leave blank if not available"></textarea>
+                        <textarea class="form-control" id="input Bullet 3" name="Company4_Bullet3" placeholder="leave blank if not available"></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Bullet 4</label>
-                        <textarea class="form-control" id="input Bullet 4"  placeholder="leave blank if not available"></textarea>
+                        <textarea class="form-control" id="input Bullet 4" name="Company4_Bullet4" placeholder="leave blank if not available"></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Bullet 5</label>
-                        <textarea class="form-control" id="input Bullet 5"  placeholder="leave blank if not available"></textarea>
+                        <textarea class="form-control" id="input Bullet 5" name="Company4_Bullet5" placeholder="leave blank if not available"></textarea>
                       </div>
                     </div>
 
@@ -281,20 +279,21 @@
             <h3>Activities and Interests</h3>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Languages</label>
-            <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+            <textarea class="form-control" id="input Honor" name="Languages" placeholder="leave blank if not available"></textarea>
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Technical Skills</label>
-            <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+            <textarea class="form-control" id="input Honor" name="Technical_skills" placeholder="leave blank if not available"></textarea>
           </div><div class="form-group">
             <label for="exampleFormControlTextarea1">Training</label>
-            <textarea class="form-control" id="input Honor"  placeholder="leave blank if not available"></textarea>
+            <textarea class="form-control" id="input Honor" name="Training" placeholder="leave blank if not available"></textarea>
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Relevant Coursework</label>
-            <textarea class="form-control" id="input Coursework"  placeholder="leave blank if not available"></textarea>
+            <textarea class="form-control" id="input Coursework" name="Relevant_Coursework" placeholder="leave blank if not available"></textarea>
           </div>
         </div>
+
       </section>
 
 
@@ -317,6 +316,7 @@
 
 
 
+{% endfor %}
 
 
 </body>

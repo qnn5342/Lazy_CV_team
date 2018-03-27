@@ -7,29 +7,30 @@
     <link rel="stylesheet" href="static/cv_app.css">
   </head>
   <body>
+    {% for template1 in all_templates %}
         <section class="d-flex justify-content-center">
 
             <section id= "CV-size" >
                       <div id="name_section" class="d-flex flex-column justify-content-center align-items-md-center mb-2">
-                        <p class="text-capitalize mb-0 text-size font-weight-bold">Hieu Nguyen</p>
-                        <p class="mb-0">[Street Address] City, State, Zip Code</p>
-                        <p class="mb-0">(123)45678 | abc@gmail.com</p>
+                        <p class="text-capitalize mb-0 text-size font-weight-bold">{{template1.name}}</p>
+                        <p class="mb-0">[{{template1.street_address}}] {{template1.city}}, {{template1.country}}</p>
+                        <p class="mb-0">{{template1.Phonenumber}} | {{template1.Email}}</p>
                       </div>
                       <div id="Education_section" class="mb-2">
                         <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0">Education</h6>
                             <div>
                                 <div class="d-flex justify-content-between font-weight-bold text-capitalize">
-                                  <p class="p-0">Harvard University</p>
-                                  <p class="p-0">Hanoi, Vietnam</p>
+                                  <p class="p-0">{{template1.university}}</p>
+                                  <p class="p-0">{{template1.uni_location}}</p>
                                 </div>
                                 <div class="d-flex justify-content-between font-italic">
-                                  <p class="">Bachelor of Everything</p>
-                                  <p>Expected May 2013</p>
+                                  <p class="">{{template1.major}}</p>
+                                  <p>{{template1.graduation_date}}</p>
                                 </div>
                                 <ul>
-                                  <li><span class="font-weight-bold">GPA:</span> 3.9/4.0; <span class="font-weight-bold">SAT:</span> 2110 (Math SAT 770) </li>
-                                  <li><span class="font-weight-bold">Honors:</span> Frank Armstrong 2 / 3 Tuition Scholarship Recipient; Dean’s List</li>
-                                  <li><span class="font-weight-bold">Relevant Coursework:</span>Financial Accounting; Money & Banking; Statistics; Intermediate Microeconomics</li>
+                                  <li><span class="font-weight-bold">GPA:</span> {{template1.GPA}}; <span class="font-weight-bold">SAT:</span> {{template1.SAT}}</li>
+                                  <li><span class="font-weight-bold">Honors:</span> {{template1.Honors}}</li>
+                                  <li><span class="font-weight-bold">Relevant Coursework:</span>{{template1.Relevant_Coursework}}</li>
                                 </ul>
                           </div>
                       </div>
@@ -37,80 +38,84 @@
                         <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0"> Work & Leadership Experience</h6>
                                     <div id="job-1" class="mb-1">
                                         <div class="d-flex justify-content-between font-weight-bold text-capitalize">
-                                          <p class="p-0 mb-0">XYZ Company</p>
-                                          <p class="p-0 mb-0">Hanoi, Vietnam</p>
+                                          <p class="p-0 mb-0">{{template1.Company1}}</p>
+                                          <p class="p-0 mb-0">{{template1.Company1_location}}</p>
                                         </div>
                                         <div class="d-flex justify-content-between font-italic mb-0 p-0">
-                                          <p class="mb-0 p-0">Any position whatsoever</p>
-                                          <p class="mb-0 p-0">MonthX Year1 - Monthy Year2</p>
+                                          <p class="mb-0 p-0">{{template1.Company1_position}}</p>
+                                          <p class="mb-0 p-0">{{template1.Company1_duration}}</p>
                                         </div>
                                         <ul>
-                                          <li> Managed 4000 products in footwear category by creating online marketing campaigns, resulting in 12% monthly growth in revenue </li>
-                                          <li> Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
-                                          <li> Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
-                                          <li> Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
+                                          <li > {{template1.Company1_Bullet1}} </li>
+                                          <li> {{template1.Company1_Bullet2}} </li>
+                                          <li> {{template1.Company1_Bullet3}}  </li>
+                                          <li> {{template1.Company1_Bullet4}} </li>
                                         </ul>
                                   <div id="job-2" class="mb-1">
                                   </div>
                                       <div class="d-flex justify-content-between font-weight-bold text-capitalize">
-                                        <p class="p-0 mb-0">XYZ Company</p>
-                                        <p class="p-0 mb-0">Hanoi, Vietnam</p>
+                                        <p class="p-0 mb-0">{{template1.Company2}}</p>
+                                        <p class="p-0 mb-0">{{template1.Company2_location}}</p>
                                       </div>
                                       <div class="d-flex justify-content-between font-italic mb-0 p-0">
-                                        <p class="mb-0 p-0">Any position whatsoever</p>
-                                        <p class="mb-0 p-0">MonthX Year1 - Monthy Year2</p>
+                                        <p class="mb-0 p-0">{{template1.Company2_position}}</p>
+                                        <p class="mb-0 p-0">{{template1.Company2_duration}}</p>
                                       </div>
                                       <ul>
-                                        <li> Managed 4000 products in footwear category by creating online marketing campaigns, resulting in 12% monthly growth in revenue </li>
-                                        <li> Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
-                                        <li> Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
-                                        <li> Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
+                                        <li>{{template1.Company2_Bullet1}}  </li>
+                                        <li>{{template1.Company2_Bullet2}} Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
+                                        <li>{{template1.Company2_Bullet3}} Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
+                                        <li>{{template1.Company2_Bullet4}} Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
                                       </ul>
                                 </div>
                                 <div id="job-3" class="mb-1">
                                     <div class="d-flex justify-content-between font-weight-bold text-capitalize">
-                                      <p class="p-0 mb-0">XYZ Company</p>
-                                      <p class="p-0 mb-0">Hanoi, Vietnam</p>
+                                      <p class="p-0 mb-0">{{template1.Company3}}</p>
+                                      <p class="p-0 mb-0">{{template1.Company3_location}}</p>
                                     </div>
                                     <div class="d-flex justify-content-between font-italic mb-0 p-0">
-                                      <p class="mb-0 p-0">Any position whatsoever</p>
-                                      <p class="mb-0 p-0">MonthX Year1 - Monthy Year2</p>
+                                      <p class="mb-0 p-0">{{template1.Company3_position}}</p>
+                                      <p class="mb-0 p-0">{{template1.Company3_duration}}</p>
                                     </div>
                                     <ul>
-                                      <li> Managed 4000 products in footwear category by creating online marketing campaigns, resulting in 12% monthly growth in revenue </li>
-                                      <li> Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
-                                      <li> Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
-                                      <li> Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
+                                      <li> {{template1.Company3_Bullet1}} Managed 4000 products in footwear category by creating online marketing campaigns, resulting in 12% monthly growth in revenue </li>
+                                      <li> {{template1.Company3_Bullet2}} Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
+                                      <li> {{template1.Company3_Bullet3}} Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
+                                      <li> {{template1.Company3_Bullet4}} Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
                                     </ul>
                                 </div>
                                   <div id="job-4" class="mb-1">
                                   <div class="d-flex justify-content-between font-weight-bold text-capitalize">
-                                    <p class="p-0 mb-0">XYZ Company</p>
-                                    <p class="p-0 mb-0">Hanoi, Vietnam</p>
+                                    <p class="p-0 mb-0">{{template1.Company4}}</p>
+                                    <p class="p-0 mb-0">{{template1.Company4_location}}</p>
                                   </div>
                                   <div class="d-flex justify-content-between font-italic mb-0 p-0">
-                                    <p class="mb-0 p-0">Any position whatsoever</p>
-                                    <p class="mb-0 p-0">MonthX Year1 - Monthy Year2</p>
+                                    <p class="mb-0 p-0">{{template1.Company4_position}}</p>
+                                    <p class="mb-0 p-0">{{template1.Company4_duration}}</p>
                                   </div>
                                   <ul>
-                                    <li> Managed 4000 products in footwear category by creating online marketing campaigns, resulting in 12% monthly growth in revenue </li>
-                                    <li> Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
-                                    <li> Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
-                                    <li> Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
+                                    <li> {{template1.Company4_Bullet4}} Managed 4000 products in footwear category by creating online marketing campaigns, resulting in 12% monthly growth in revenue </li>
+                                    <li> {{template1.Company4_Bullet4}} Analyzed past marketing campaigns and led the team’s effort to implement three sales campaigns, resulting in a 3x increase in sales </li>
+                                    <li> {{template1.Company4_Bullet4}} Analyzed ROI and created marketing campaigns that lowered customer acquisition cost by 25% </li>
+                                    <li> {{template1.Company4_Bullet4}} Created an Excel tool which automatically processed more than 10,000 data entries daily, resulting in a 4x increase in time efficiency </li>
                                   </ul>
                                 </div>
                      </div>
                      <div id="Skills-Interests" class="m-0">
                        <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0"> Skills, Activities and Interests</h6>
                        <ul>
-                           <li><span class="font-weight-bold">Languages:</span> native in Vietnamese </li>
-                           <li><span class="font-weight-bold">Technical skills:</span> MS Excel; Python; VBA; Google Analytics; WebTrekk Web Analytics </li>
-                           <li><span class="font-weight-bold">Training:</span>completed Zoologic Financial Training in Equity; Fixed Income Asset; Accounting; Corporate Finance</li>
-                           <li><span class="font-weight-bold">Activities:</span>Civic Engagement Office (Volunteer Coordinator); VietAbroader Organization (Website Administrator); Enactus (Project leader)</li>
-                           <li><span class="font-weight-bold">Interests:</span>swing dance; volunteer</li>
+                           <li><span class="font-weight-bold">Languages:</span> {{template1.Languages}}</li>
+                           <li><span class="font-weight-bold">Technical skills:</span> {{template1.Technical_skills}} </li>
+                           <li><span class="font-weight-bold">Training:</span> {{template1.Training}} </li>
+                           <li><span class="font-weight-bold">Activities:</span>{{template1.Activities}}</li>
+                           <li><span class="font-weight-bold">Interests:</span>{{template1.Interests}}</li>
                         </ul>
                      </div>
                 </section>
           </section>
+
+
+          {% endfor %}
+
   </body>
 </html>

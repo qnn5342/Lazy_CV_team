@@ -40,30 +40,68 @@ def form(template1_id):
     template1 = Template1.objects().with_id(id_to_find)
     # print(template2)
     if request.method == 'GET':
-        print(template1)
+    #     print(template1)
         return render_template('CV_detail_page3/CV_form_edit.html', all_templates=[template1])
     elif request.method == 'POST':
-        print (template1)
+        # print (template1)
         if template1 is not None:
+            # list1 = ['name', 'street_address', 'Phonenumber', 'Email', 'city', 'country', 'university', 'uni_location', 'major', 'graduation_date', 'GPA', 'SAT', 'Honors', 'Relevant_Coursework', 'Company1', 'Company1_location', 'Company1_Position', 'Company1_duration', 'Company1_Bullet1', 'Company1_Bullet2', 'Company1_Bullet3', 'Company1_Bullet4', 'Company2', 'Company2_location', 'Company2_Position', 'Company2_duration', 'Company2_Bullet1', 'Company2_Bullet2', 'Company2_Bullet3', 'Company2_Bullet4', 'Company3', 'Company3_location', 'Company3_Position', 'Company3_duration', 'Company3_Bullet1', 'Company3_Bullet2', 'Company3_Bullet3', 'Company3_Bullet4', 'Languages', 'Technical_skills', 'Training', 'Activities', 'Interests']
             form = request.form
-            name = form['name']
-            street_address = form['street_address']
-            city = form['city']
-            country = form['country']
-            Phonenumber = form['Phonenumber']
-            Email = form['Email']
-            university = form ['university']
-            uni_location = form ['uni_location']
+            if form['name'] != "":
+                name = form['name']
+            else:
+                name = template1['name']
 
-            print(name)
-            print(street_address)
-            print(city)
-            print(country)
+            if form['street_address'] != "":
+                street_address = form['street_address']
+            else:
+                street_address = template1['street_address']
+            #
+            # if str(form['Phonenumber']) != "":
+            #     Phonenumber = form['Phonenumber']
+            # else:
+            #     Phonenumber = template1['Phonenumber']
+            #
+            # if form['Email] != "":
+            #     Email = form['Email']
+            # else:
+            #     Email = template1['Email']
+            #
+            # if form['city'] != "":
+            #     city = form['city']
+            # else:
+            #     city = template1['city']
+            #
+            # if form['country'] != "":
+            #     country = form['country']
+            # else:
+            #     country = template1['country']
 
-
+            # country = form['country']
+            # Phonenumber = form['Phonenumber']
+            # Email = form['Email']
+            # university = form ['university']
+            # uni_location = form ['uni_location']
+            # SAT = form['SAT']
+            # print(name)
+            # print(template1['name'])
+            # print(street_address)
+            # print(city)
+            # print(country)
+            # print(SAT)
+            # list1 = [name, street_address]
+            # list2 = []
+            # for item in list1:
+            #     if item != '':
+            #         list2.append(item)
+            # print(list2)
+            print (name)
             template1.update(set__name= name,
-            set__street_address= street_address,
-             set__city= city, set__country= country)
+            set__street_address= street_address)
+            # set__Phonenumber= Phonenumber)
+            # set__Email= Email,)
+             # set__city= city, set__country= country)
+              # set__SAT = SAT)
             template1.reload()
             print(template1.to_mongo())
             # return "Updated!!"
