@@ -297,7 +297,7 @@ def preview(Username):
 #             return("Not found")
 
 
-@app.route('/static/<Username>')
+@app.route('/static_/<Username>')
 def pdf(Username):
     try:
         # create the API client instance
