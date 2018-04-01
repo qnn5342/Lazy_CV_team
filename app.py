@@ -263,7 +263,7 @@ def preview(Username):
         except pdfcrowd.Error as why:
         #    report the error to the standard error stream
            sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
-        return "Saved"
+        return redirect("https://lazy-cv-test.herokuapp.com/static/CV/{0}.pdf".format(Username))
 
 
 #
