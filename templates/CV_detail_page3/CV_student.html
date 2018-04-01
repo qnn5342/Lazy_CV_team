@@ -4,18 +4,21 @@
     <meta charset="utf-8">
     <title> CV for students </title>
     {% include "metadata.html" %}
-    <link rel="stylesheet" href="static/cv_app.css">
+    <link rel="stylesheet" href="../static/cv_app.css">
   </head>
   <body>
     {% for template1 in all_templates %}
         <section class="d-flex justify-content-center">
-
+            <div class="">
+                <button  onclick="javascript:history.back()" class="btn btn-primary" type="submit">Back</button>
+            </div>
             <section id= "CV-size" >
-                      <div id="name_section" class="d-flex flex-column justify-content-center align-items-md-center mb-2 text-center">
-                        <p class="text-capitalize mb-0 text-size font-weight-bold">{{template1.name}}</p>
-                        <p class="mb-0">[{{template1.street_address}}] {{template1.city}}, {{template1.country}}</p>
-                        <p class="mb-0">{{template1.Phonenumber}} | {{template1.Email}}</p>
+                      <div id="name_section" class="d-flex flex-column justify-content-center align-items-md-center mb-2 ">
+                        <p class="text-capitalize mb-0 text-size font-weight-bold text-center">{{template1.name}}</p>
+                        <p class="mb-0 text-center">[{{template1.street_address}}] {{template1.city}}, {{template1.country}}</p>
+                        <p class="mb-0 text-center">{{template1.Phonenumber}} | {{template1.Email}}</p>
                       </div>
+
                       <div id="Education_section" class="mb-2">
                         <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0">Education</h6>
                             <div>
@@ -112,6 +115,12 @@
                         </ul>
                      </div>
                 </section>
+        <form action="" method="POST">
+
+            <div class="">
+                <button  class="btn btn-primary" type="submit">Print PDF</button>
+            </div>
+        </form>
           </section>
 
 

@@ -2,6 +2,9 @@ from flask import *
 
 from Module.CV_template1 import *
 
+
+import pdfcrowd
+
 import mlab
 
 mlab.connect()
@@ -30,7 +33,7 @@ def index1():
 def signup(cv_id):
     if request.method == "GET":
         print(cv_id)
-        return render_template('login/sign-up.html', cv_id = cv_id)
+        return render_template('signup.html', cv_id = cv_id)
     elif request.method == "POST":
         form = request.form
         Username = form['Username']
@@ -42,13 +45,13 @@ def signup(cv_id):
         if len(check_user) == 0:
             user = User(Username = Username, Password = Password, email = email, Phonenumber = Phonenumber, CV_id = cv_id)
             user.save()
-            # user_id = user.id
+            user_id = user.id
             # print(user_id)
             # session['User_id'] = ''.format(user_id)
             # # return "Saved"
             return redirect(url_for('form',message = "", template1_id = cv_id, user_id = user_id ))
         else:
-            return render_template('login/sign-up.html', message = "Duplicated username or password, please re-enter!", cv_id = cv_id)
+            return render_template('signup.html', message = "Duplicated username or password, please re-enter!", cv_id = cv_id)
 
     # return render_template('login/sign-up.html',)
 
@@ -57,7 +60,7 @@ def signup(cv_id):
 def login(cv_id):
     if request.method == "GET":
         print(cv_id)
-        return render_template('login/login.html', message = '', cv_id = cv_id)
+        return render_template('login.html', message = '', cv_id = cv_id)
     elif request.method == "POST":
         form = request.form
         Username = form['Username']
@@ -77,7 +80,7 @@ def login(cv_id):
             # return ("Bingo")
             return redirect(url_for('form', template1_id = cv_id, user_id = user_id ))
         else:
-            return render_template('login/login.html', message = "Not found username or invalid password. Please re-enter or click signup link!", cv_id = cv_id)
+            return render_template('login.html', message = "Not found username or invalid password. Please re-enter or click signup link!", cv_id = cv_id)
 
 
 @app.route('/student')
@@ -233,16 +236,30 @@ def form(template1_id, user_id):
             template1.reload()
             print(template1.to_mongo())
             # return "Updated!!"
-            return redirect(url_for('preview'))
+            return redirect(url_for('preview', Username= name))
 
         else:
             return("Not found")
 
 
-@app.route('/preview')
-def preview():
+@app.route('/preview/<Username>', methods=['GET','POST'])
+def preview(Username):
     template1 = Template1.objects
-    return render_template('CV_detail_page3/CV_student.html', all_templates=template1)
+    if request.method == 'GET':
+        return render_template('CV_detail_page3/CV_student.html', all_templates=template1)
+    elif request.method == 'POST':
+        try:
+            # create the API client instance
+            client = pdfcrowd.HtmlToPdfClient('quangnn', 'ca74aa6580bd6ab6c1e80b0954cab851')
+            # run the conversion and write the result to a file
+            print(Username)
+            client.convertUrlToFile('http://localhost:5000/preview/{0}'.format(Username), 'static/CV/{0}.pdf'.format(Username))
+            # pdfcrowd-> setPageHeight("-1")
+
+        except pdfcrowd.Error as why:
+        #    report the error to the standard error stream
+           sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
+        return "Saved"
 
 
 
@@ -277,26 +294,28 @@ def preview():
 #             return("Not found")
 
 
+@app.route('/static/<Username>')
+def pdf(Username):
+    try:
+        # create the API client instance
+        client = pdfcrowd.HtmlToPdfClient('quangnn', 'ca74aa6580bd6ab6c1e80b0954cab851')
+        # run the conversion and write the result to a file
+        client.convertUrlToFile('https://lazy-cv-test.herokuapp.com/preview', 'static/CV/{0}.pdf'.format(Username))
+        # pdfcrowd-> setPageHeight("-1")
 
-
-
-@app.route('/search/<gender>')
-def search(gender):
-    services= Service.objects(gender=gender, yob__lte = '1998', height__gte = "160", address__contains = "Hanoi")
-    return render_template('search.html', all_services= services)
-
-@app.route('/worker')
-def worker():
-    return render_template('service-worker.html')
-
-@app.route('/template')
-def template():
-    return "form"
-
-@app.route('/admin')
-def admin():
-    services = Service.objects()
-    return render_template('admin.html', services= services)
+    except pdfcrowd.Error as why:
+    #    report the error to the standard error stream
+       sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
+#
+#
+# @app.route('/template')
+# def template():
+#     return "form"
+#
+# @app.route('/admin')
+# def admin():
+#     services = Service.objects()
+#     return render_template('admin.html', services= services)
 
 @app.route('/delete/<service_id>')
 def delete(service_id):
@@ -323,9 +342,14 @@ def created():
         new_service.save()
 
         return "Saved"
-
-
-
+#
+# @app.route('/login')
+# def login():
+#     return render_template('login.html')
+#
+# @app.route('/signup')
+# def signup():
+#     return render_template('signup.html')
 
 if __name__ == '__main__':
   app.run(debug=True)

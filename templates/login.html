@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Log in with LazyCV </title>
+    {% include "meta-data.html" %}
+  </head>
+  <body class="ml-5 bg-login">
+    <nav class="nav text-dark">
+          <a class="nav-link active text-dark font-size-20px"> <i class="fas fa-address-book"></i> </a>
+          <a class="nav-link active text-dark font-size-20px text-uppercase font-open-sans" href="{{ url_for('index1') }}"> Home </a>
+          <a class="nav-link active text-dark font-size-20px text-uppercase font-open-sans" href="{{ url_for('index1') }}"> About </a>
+    </nav>
+    <div class="text-dark font-size-50px text-uppercase text-center mt-3 font-weight-bold">
+    Log In
+  </div>
+  <div class="d-flex justify-content-center my-4">
+    <form class="px-4 py-3 col-3" method="POST">
+      <div class="form-group font-weight-bold">
+        <label for="exampleDropdownFormEmail1">Username</label>
+        <input type="Text" name="Username"class="form-control" id="exampleDropdownFormEmail1" placeholder="lazycv@example.com">
+      </div>
+      <div class="form-group font-weight-bold">
+        <label for="exampleDropdownFormPassword1">Password</label>
+        <input type="password" name="Password" class="form-control" id="exampleDropdownFormPassword1" placeholder="lazycv123">
+      </div>
+      <button type="submit" class="btn btn-primary px-3">
+        Sign in
+      </button>
+      <a href="{{url_for('signup', cv_id = cv_id)}}">Click to sign up</a> <br>
+
+      <p>{{message}}</p>
+    </form>
+  </div>
+
+  </body>
+</html>

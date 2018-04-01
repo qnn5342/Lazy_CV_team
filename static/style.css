@@ -2,11 +2,22 @@
   background: url('../static/images/frontpage.jpg');
   height: 100vh;
   background-size: cover;
+
 }
 
 .bg-service {
-  background: url('../static/images/service.jpg');
+  background: url('../static/images/service2.jpg');
   height: 100vh;
+  background-size: cover;
+}
+
+.bg-login {
+  background: url('../static/images/login.jpg');
+  background-size: cover;
+}
+
+.bg-signup {
+  background: url('../static/images/signup.jpg');
   background-size: cover;
 }
 
@@ -21,6 +32,10 @@ a.nav-link:hover{
 
 .font-size-30px {
   font-size: 30px;
+}
+
+.font-size-35px {
+  font-size: 35px;
 }
 
 .font-size-20px {
@@ -98,3 +113,14 @@ ul {
 /* .image {
   background-image: ulr(https://res.cloudinary.com/teepublic/image/private/s--PtCSCK3S--/t_Preview/b_rgb:ffffff,c_lpad,f_jpg,h_630,q_90,w_1200/v1503889515/production/designs/1855155_1.jpg);
 } */
+
+.h-300px {
+  height: 300px;
+}
+
+#lock {
+  left: 510px;
+  top: 45px;
+  z-index:  1;
+  opacity: 0.2;
+}
