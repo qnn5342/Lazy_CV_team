@@ -4,17 +4,8 @@
     <meta charset="utf-8">
     <title> CV for students </title>
     {% include "meta-data.html" %}
-    <link rel="stylesheet" href="../static/cv_app.css">
-    <script type="text/javascript">
-        var print_button = $("#print_button");
-        $( document ).ready(function() {
-          var print_button = $("#print_button");
-          print_button.click(function(){
-            $('#back_button').hide();
-            $('#print_button').hide();
-          });
-        });
-    </script>
+    <link href="../static/cv_app.css" >
+    <!-- <link rel="stylesheet" href="/css/master.css"> -->
   </head>
   <body>
     {% for template1 in all_templates %}
