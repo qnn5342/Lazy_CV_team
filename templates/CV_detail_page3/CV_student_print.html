@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> CV for students </title>
+    {% include "metadata.html" %}
+    <link rel="stylesheet" href="../static/cv_app.css">
+  </head>
+  <body>
+    {% for template1 in all_templates %}
+        <section class="d-flex justify-content-center">
+
+            <section id= "CV-size" >
+                      <div id="name_section" class="d-flex flex-column justify-content-center align-items-md-center mb-2 ">
+                        <p class="text-capitalize mb-0 text-size font-weight-bold text-center">{{template1.name}}</p>
+                        <p class="mb-0 text-center">[{{template1.street_address}}] {{template1.city}}, {{template1.country}}</p>
+                        <p class="mb-0 text-center">{{template1.Phonenumber}} | {{template1.Email}}</p>
+                      </div>
+
+                      <div id="Education_section" class="mb-2">
+                        <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0">Education</h6>
+                            <div>
+                                <div class="d-flex justify-content-between font-weight-bold text-capitalize">
+                                  <p class="p-0">{{template1.university}}</p>
+                                  <p class="p-0">{{template1.uni_location}}</p>
+                                </div>
+                                <div class="d-flex justify-content-between font-italic">
+                                  <p class="">{{template1.major}}</p>
+                                  <p>{{template1.graduation_date}}</p>
+                                </div>
+                                <ul>
+                                  <li><span class="font-weight-bold">GPA:</span> {{template1.GPA}}; <span class="font-weight-bold">SAT:</span> {{template1.SAT}}</li>
+                                  <li><span class="font-weight-bold">Honors:</span> {{template1.Honors}}</li>
+                                  <li><span class="font-weight-bold">Relevant Coursework:</span>{{template1.Relevant_Coursework}}</li>
+                                </ul>
+                          </div>
+                      </div>
+                      <div id="work-experience_section" class="mb-2">
+                        <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0"> Work & Leadership Experience</h6>
+                                    <div id="job-1" class="mb-1">
+                                        <div class="d-flex justify-content-between font-weight-bold text-capitalize">
+                                          <p class="p-0 mb-0">{{template1.Company1}}</p>
+                                          <p class="p-0 mb-0">{{template1.Company1_location}}</p>
+                                        </div>
+                                        <div class="d-flex justify-content-between font-italic mb-0 p-0">
+                                          <p class="mb-0 p-0">{{template1.Company1_Position}}</p>
+                                          <p class="mb-0 p-0">{{template1.Company1_duration}}</p>
+                                        </div>
+                                        <ul>
+                                          <li> {{template1.Company1_Bullet1}} </li>
+                                          <li> {{template1.Company1_Bullet2}} </li>
+                                          <li> {{template1.Company1_Bullet3}}  </li>
+                                          <li> {{template1.Company1_Bullet4}} </li>
+                                        </ul>
+                                  <div id="job-2" class="mb-1">
+                                  </div>
+                                      <div class="d-flex justify-content-between font-weight-bold text-capitalize">
+                                        <p class="p-0 mb-0">{{template1.Company2}}</p>
+                                        <p class="p-0 mb-0">{{template1.Company2_location}}</p>
+                                      </div>
+                                      <div class="d-flex justify-content-between font-italic mb-0 p-0">
+                                        <p class="mb-0 p-0">{{template1.Company2_Position}}</p>
+                                        <p class="mb-0 p-0">{{template1.Company2_duration}}</p>
+                                      </div>
+                                      <ul>
+                                        <li>{{template1.Company2_Bullet1}}  </li>
+                                        <li>{{template1.Company2_Bullet2}}  </li>
+                                        <li>{{template1.Company2_Bullet3}}  </li>
+                                        <li>{{template1.Company2_Bullet4}}  </li>
+                                      </ul>
+                                </div>
+                                <div id="job-3" class="mb-1">
+                                    <div class="d-flex justify-content-between font-weight-bold text-capitalize">
+                                      <p class="p-0 mb-0">{{template1.Company3}}</p>
+                                      <p class="p-0 mb-0">{{template1.Company3_location}}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between font-italic mb-0 p-0">
+                                      <p class="mb-0 p-0">{{template1.Company3_Position}}</p>
+                                      <p class="mb-0 p-0">{{template1.Company3_duration}}</p>
+                                    </div>
+                                    <ul>
+                                      <li> {{template1.Company3_Bullet1}} </li>
+                                      <li> {{template1.Company3_Bullet2}} </li>
+                                      <li> {{template1.Company3_Bullet3}} </li>
+                                      <li> {{template1.Company3_Bullet4}} </li>
+                                    </ul>
+                                <!-- </div>
+                                  <div id="job-4" class="mb-1">
+                                  <div class="d-flex justify-content-between font-weight-bold text-capitalize">
+                                    <p class="p-0 mb-0">{{template1.Company4}}</p>
+                                    <p class="p-0 mb-0">{{template1.Company4_location}}</p>
+                                  </div>
+                                  <div class="d-flex justify-content-between font-italic mb-0 p-0">
+                                    <p class="mb-0 p-0">{{template1.Company4_Position}}</p>
+                                    <p class="mb-0 p-0">{{template1.Company4_duration}}</p>
+                                  </div>
+                                  <ul>
+                                    <li> {{template1.Company4_Bullet1}}  </li>
+                                    <li> {{template1.Company4_Bullet2}} </li>
+                                    <li> {{template1.Company4_Bullet3}} </li>
+                                    <li> {{template1.Company4_Bullet4}} </li>
+                                  </ul>
+                                </div> -->
+                     </div>
+                     <div id="Skills-Interests" class="m-0">
+                       <h6 class="text-uppercase border-bottom border-dark font-weight-bold mb-0"> Skills, Activities and Interests</h6>
+                       <ul>
+                           <li><span class="font-weight-bold">Languages:</span> {{template1.Languages}}</li>
+                           <li><span class="font-weight-bold">Technical skills:</span> {{template1.Technical_skills}} </li>
+                           <li><span class="font-weight-bold">Training:</span> {{template1.Training}} </li>
+                           <li><span class="font-weight-bold">Activities:</span>{{template1.Activities}}</li>
+                           <li><span class="font-weight-bold">Interests:</span>{{template1.Interests}}</li>
+                        </ul>
+                     </div>
+                </section>
+        
+          </section>
+
+
+          {% endfor %}
+
+  </body>
+</html>
