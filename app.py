@@ -253,7 +253,7 @@ def preview(Username):
             client = pdfcrowd.HtmlToPdfClient('quangnn', 'ca74aa6580bd6ab6c1e80b0954cab851')
             # run the conversion and write the result to a file
             print(Username)
-            client.convertUrlToFile('http://localhost:5000/preview/{0}'.format(Username), 'static/CV/{0}.pdf'.format(Username))
+            client.convertUrlToFile('https://lazy-cv-test.herokuapp.com/preview/{0}'.format(Username), 'static/CV/{0}.pdf'.format(Username))
             # pdfcrowd-> setPageHeight("-1")
 
         except pdfcrowd.Error as why:

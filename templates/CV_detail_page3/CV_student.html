@@ -5,12 +5,22 @@
     <title> CV for students </title>
     {% include "metadata.html" %}
     <link rel="stylesheet" href="../static/cv_app.css">
+    <script type="text/javascript">
+        var print_button = $("#print_button");
+        $( document ).ready(function() {
+          var print_button = $("#print_button");
+          print_button.click(function(){
+            $('#back_button').hide();
+            $('#print_button').hide();
+          });
+        });
+    </script>
   </head>
   <body>
     {% for template1 in all_templates %}
         <section class="d-flex justify-content-center">
             <div class="">
-                <button  onclick="javascript:history.back()" class="btn btn-primary" type="submit">Back</button>
+                <button id="back_button" onclick="javascript:history.back()" class="btn btn-primary" type="submit">Back</button>
             </div>
             <section id= "CV-size" >
                       <div id="name_section" class="d-flex flex-column justify-content-center align-items-md-center mb-2 ">
@@ -118,7 +128,7 @@
         <form action="" method="POST">
 
             <div class="">
-                <button  class="btn btn-primary" type="submit">Print PDF</button>
+                <button id="print_button"  class="btn btn-primary" type="submit">Print PDF</button>
             </div>
         </form>
           </section>
