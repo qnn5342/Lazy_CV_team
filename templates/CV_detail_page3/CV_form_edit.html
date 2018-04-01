@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>CV-form-edit</title>
       {% include "metadata.html" %}
-      <link rel="stylesheet" href="../static/cv_form.css">
+      <link rel="stylesheet" href="../../static/cv_form.css">
   </head>
   <body>
-        {% for template1 in all_templates %}
+
     <header  id="Save-button" class="mb-1">
       <form method= 'post'>
               <div class="">
@@ -36,7 +36,7 @@
                               <div class="form-group col-md-4">
                                 <label for="inputState">Country</label>
                                 <select id="inputState" class="form-control" name="country">
-                                
+
                                   <option value="Vietnam" selected>Vietnam</option>
                                   <option value="US">US</option>
                                   <option value="UK">UK</option>
@@ -105,7 +105,7 @@
                   </div>
                   <div class="form-group col-md-6">
                     <label for="input Company 1 location">Company 1 location</label>
-                    <input type="company 1 location" class="form-control" id="input location" name="Company1_location"placeholder="template1.Company1_location">
+                    <input type="company 1 location" class="form-control" id="input location" name="Company1_location"placeholder="{{template1.Company1_location}}">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="input Position">Your Position</label>
@@ -301,7 +301,7 @@
 
 
       <section  id="section2" class="">
-          <img src="../static/images/CV_template1.jpg" alt="">
+          <img src="../../static/images/CV_template1.jpg" alt="">
 
       </section>
 
@@ -319,7 +319,7 @@
 
 
 
-{% endfor %}
+
 
 
 </body>

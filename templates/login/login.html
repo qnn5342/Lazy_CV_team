@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <form class=""  method="post">
+
+          <label for="">Username</label>
+          <input type="text" name="Username" value="">
+          <label for="">Password</label>
+          <input type="password" name="Password" value="">
+          <input type="submit" name="" value="Login">
+          <a href="{{url_for('signup', cv_id = cv_id)}}">Click to sign up</a> <br>
+          <!-- <p>{{cv_id}}</p> -->
+          <p>{{message}}</p>
+
+  </form>
+  </body>
+</html>

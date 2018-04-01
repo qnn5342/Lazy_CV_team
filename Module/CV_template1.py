@@ -1,9 +1,22 @@
 from mongoengine import Document, StringField, IntField, BooleanField
 
+class User(Document):
+
+
+    Username = StringField()
+    Password = StringField()
+    CV_id = StringField()
+    email = StringField()
+    Phonenumber = IntField()
+
+class Template_list(object):
+
+    template_id = IntField()
+
 
 
 class Template1(Document):
-
+    template_id = IntField()
     name = StringField()
     street_address = StringField()
     Phonenumber = IntField()
@@ -54,3 +67,4 @@ class Template1(Document):
     Training = StringField()
     Activities = StringField()
     Interests = StringField()
+    user_id = StringField()

@@ -1,6 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import *
 
-from Module.CV_template1 import Template1
+from Module.CV_template1 import *
 
 import mlab
 
@@ -8,6 +8,7 @@ mlab.connect()
 
 
 app = Flask(__name__)
+app.secret_key = 'any random string'
 
 # create collection
 #
@@ -25,23 +26,88 @@ app = Flask(__name__)
 def index1():
     return render_template('index.html',)
 
+@app.route('/signup/<cv_id>',methods = ['GET','POST'])
+def signup(cv_id):
+    if request.method == "GET":
+        print(cv_id)
+        return render_template('login/sign-up.html', cv_id = cv_id)
+    elif request.method == "POST":
+        form = request.form
+        Username = form['Username']
+        Password = form['Password']
+        email = form['email']
+        Phonenumber = form['Phonenumber']
+        check_user = User.objects(Username= Username, Password=Password)
+        print (check_user)
+        if len(check_user) == 0:
+            user = User(Username = Username, Password = Password, email = email, Phonenumber = Phonenumber, CV_id = cv_id)
+            user.save()
+            # user_id = user.id
+            # print(user_id)
+            # session['User_id'] = ''.format(user_id)
+            # # return "Saved"
+            return redirect(url_for('form',message = "", template1_id = cv_id, user_id = user_id ))
+        else:
+            return render_template('login/sign-up.html', message = "Duplicated username or password, please re-enter!", cv_id = cv_id)
+
+    # return render_template('login/sign-up.html',)
+
+
+@app.route('/login/<cv_id>',methods = ['GET','POST'])
+def login(cv_id):
+    if request.method == "GET":
+        print(cv_id)
+        return render_template('login/login.html', message = '', cv_id = cv_id)
+    elif request.method == "POST":
+        form = request.form
+        Username = form['Username']
+        Password = form['Password']
+        user = User.objects(CV_id = cv_id)
+        check_user = User.objects(Username = Username, Password = Password)
+        # user_id = user.with_id(id_to_find)
+        # user_id = session['User_id']
+        # print(user)
+        # print(Username, Password)
+        # if session['User_id'] in session:
+        if len(check_user) > 0:
+            user_id = check_user[0].id
+        # if user is not []:
+            session['logged_in'] = True
+            # print('tuan anh'+ session['User_id'])
+            # return ("Bingo")
+            return redirect(url_for('form', template1_id = cv_id, user_id = user_id ))
+        else:
+            return render_template('login/login.html', message = "Not found username or invalid password. Please re-enter or click signup link!", cv_id = cv_id)
+
+
+@app.route('/student')
+def student():
+    template1 = Template1.objects[0]
+    return render_template('service-student.html', template1 = template1)
+
+
+
 #
-# @app.route('/form')
-# def form():
-#     template1 = Template1.objects()
-#     return render_template('CV_detail_page3/CV_form_edit.html',all_templates= template1)
+# @app.route('/cv_id/<cv_id>')
+# def cv_id(cv_id):
+#     cv_id = Template1.objects[0]
+#     session['cv_id']=
+#     return render_template('service-student.html', template1 = template1)
 
 
-@app.route('/form/<template1_id>',methods = ['GET','POST'])
-def form(template1_id):
+@app.route('/form/<template1_id>/<user_id>',methods = ['GET','POST'])
+def form(template1_id, user_id):
     id_to_find = template1_id
+    user_id = user_id
     # template1 = Template1.objects()
     # print(template1)
     template1 = Template1.objects().with_id(id_to_find)
     # print(template2)
     if request.method == 'GET':
-    #     print(template1)
-        return render_template('CV_detail_page3/CV_form_edit.html', all_templates=[template1])
+        # if session['logged_in']:
+        return render_template('CV_detail_page3/CV_form_edit.html', template1=template1)
+        # else:
+        #     return render_template(url_for('login', ))
     elif request.method == 'POST':
         # print (template1)
         if template1 is not None:
@@ -214,15 +280,10 @@ def preview():
 
 
 
-
 @app.route('/search/<gender>')
 def search(gender):
     services= Service.objects(gender=gender, yob__lte = '1998', height__gte = "160", address__contains = "Hanoi")
     return render_template('search.html', all_services= services)
-
-@app.route('/student')
-def student():
-    return render_template('service-student.html')
 
 @app.route('/worker')
 def worker():
