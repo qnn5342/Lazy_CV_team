@@ -297,20 +297,20 @@ def preview(Username):
 #         else:
 #             return("Not found")
 
-
-@app.route('/static_/<Username>')
-def pdf(Username):
-    try:
-        # create the API client instance
-        client = pdfcrowd.HtmlToPdfClient('quangnn', 'ca74aa6580bd6ab6c1e80b0954cab851')
-        # run the conversion and write the result to a file
-        client.convertUrlToFile('https://lazy-cv-test.herokuapp.com/preview', 'static/CV/{0}.pdf'.format(Username))
-        # pdfcrowd-> setPageHeight("-1")
-
-    except pdfcrowd.Error as why:
-    #    report the error to the standard error stream
-       sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
 #
+# @app.route('/static/CV/<Username>')
+# def pdf(Username):
+#     try:
+#         # create the API client instance
+#         #
+#         client = pdfcrowd.HtmlToPdfClient('quangnn', 'ca74aa6580bd6ab6c1e80b0954cab851')
+#         # run the conversion and write the result to a file
+#         client.convertUrlToFile('https://lazy-cv-test.herokuapp.com/preview', '../static/CV/{0}.pdf'.format(Username))
+#         # pdfcrowd-> setPageHeight("-1")
+#
+#     except pdfcrowd.Error as why:
+#     #    report the error to the standard error stream
+#        sys.stderr.write('Pdfcrowd Error: {}\n'.format(why))
 #
 # @app.route('/template')
 # def template():
